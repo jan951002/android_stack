@@ -1,7 +1,7 @@
 # android_stack
 
 # Frameworks
-  - Retrofif
+  - Retrofit
   - Coroutines
   - Koin
   - GSON

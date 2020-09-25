@@ -9,7 +9,6 @@ import org.koin.dsl.module
  * @author Jaime Trujillo
  */
 
-/* Dependency injection for Repositories module */
 val repositoryModule = module {
 
     /* Define a factory (create a new instance each time) for DogRepository */

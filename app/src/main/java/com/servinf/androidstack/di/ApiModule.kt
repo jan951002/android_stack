@@ -18,7 +18,6 @@ import java.util.concurrent.TimeUnit
 
 private const val WIKI_API_SERVICE_BASE_URL = "http://64.225.120.248/api/"
 
-/* Dependency injection for API module */
 val apiModule = module {
 
     /* Define a Singleton instance for WikiApiService */

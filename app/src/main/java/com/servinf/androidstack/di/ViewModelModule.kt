@@ -3,6 +3,7 @@ package com.servinf.androidstack.di
 import com.servinf.androidstack.ui.dashboard.DashboardViewModel
 import com.servinf.androidstack.ui.home.HomeViewModel
 import com.servinf.androidstack.ui.notifications.NotificationsViewModel
+import org.koin.android.ext.koin.androidApplication
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -11,9 +12,8 @@ import org.koin.dsl.module
  * @author Jaime Trujillo
  */
 
-/* Dependency injection for View Models module */
 val viewModelModule = module {
-    viewModel { HomeViewModel(dogRepository = get()) }
-    viewModel { DashboardViewModel() }
-    viewModel { NotificationsViewModel() }
+    viewModel { HomeViewModel(application = androidApplication(), dogRepository = get()) }
+    viewModel { DashboardViewModel(application = androidApplication()) }
+    viewModel { NotificationsViewModel(application = androidApplication()) }
 }

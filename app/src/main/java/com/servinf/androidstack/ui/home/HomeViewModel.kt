@@ -1,8 +1,9 @@
 package com.servinf.androidstack.ui.home
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.servinf.androidstack.data.api.UseCaseResult
 import com.servinf.androidstack.data.model.Dog
 import com.servinf.androidstack.data.repository.DogRepository
@@ -13,7 +14,8 @@ import kotlin.coroutines.CoroutineContext
  * Home view model class
  * @author Jaime Trujillo
  */
-class HomeViewModel(private val dogRepository: DogRepository) : ViewModel(), CoroutineScope {
+class HomeViewModel(application: Application, private val dogRepository: DogRepository) :
+    AndroidViewModel(application), CoroutineScope {
 
     // Coroutine's background job
     private val job = Job()

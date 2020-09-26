@@ -2,6 +2,7 @@ package com.servinf.androidstack.base
 
 import android.app.Application
 import com.servinf.androidstack.di.apiModule
+import com.servinf.androidstack.di.preferencesModule
 import com.servinf.androidstack.di.repositoryModule
 import com.servinf.androidstack.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -18,7 +19,7 @@ class BaseApplication : Application() {
         /* Adding Koin modules to our application */
         startKoin {
             androidContext(this@BaseApplication)
-            modules(apiModule, repositoryModule, viewModelModule)
+            modules(apiModule, repositoryModule, viewModelModule, preferencesModule)
         }
     }
 }

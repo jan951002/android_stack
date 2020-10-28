@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.servinf.androidstack.data.api.UseCaseResult
-import com.servinf.androidstack.data.model.Dog
+import com.servinf.androidstack.data.db.model.Dog
 import com.servinf.androidstack.data.repository.DogRepository
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
@@ -26,8 +26,8 @@ class HomeViewModel(application: Application, private val dogRepository: DogRepo
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean>
         get() = _loading
-    private val _dogs = MutableLiveData<ArrayList<Dog>>()
-    val dogs: LiveData<ArrayList<Dog>>
+    private val _dogs = MutableLiveData<List<Dog>>()
+    val dogs: LiveData<List<Dog>>
         get() = _dogs
     private val _error = MutableLiveData<String>()
     val error: LiveData<String>

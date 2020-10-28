@@ -1,6 +1,6 @@
 package com.servinf.androidstack.data.api
 
-import com.servinf.androidstack.data.model.Dog
+import com.servinf.androidstack.data.db.model.Dog
 import kotlinx.coroutines.Deferred
 import retrofit2.http.*
 
@@ -11,7 +11,7 @@ import retrofit2.http.*
 interface WikiApiService {
 
     @GET("dog")
-    fun getDogsAsync(): Deferred<ArrayList<Dog>>
+    fun getDogsAsync(): Deferred<List<Dog>>
 
     //POST with form request
     @FormUrlEncoded

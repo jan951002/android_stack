@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.servinf.androidstack.R
-import com.servinf.androidstack.data.model.Dog
+import com.servinf.androidstack.data.db.model.Dog
 
 /**
  * Dogs adapter class
@@ -29,9 +29,9 @@ class DogsAdapter(private val onItemClickListener: OnItemClickListener) :
         holder.bind(data[position])
     }
 
-    fun updateData(data: ArrayList<Dog>) {
+    fun updateData(data: List<Dog>) {
         this.data.clear()
-        this.data = data
+        this.data.addAll(data)
         notifyDataSetChanged()
     }
 
